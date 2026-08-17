@@ -46,25 +46,32 @@ def chat_endpoint(request: ChatRequest):
       4. Generate answer with GPT-4o-mini
     """
 
-    manager = get_source_manager()
+    try:
+        manager = get_source_manager()
 
-    # Step 1+2: Route + Fetch
-    source_response = manager.execute_route(
-        request.message
-    )
+        # Step 1+2: Route + Fetch
+        source_response = manager.execute_route(
+            request.message
+        )
 
-    # Step 3: Build context
-    context = process_context(source_response)
+        # Step 3: Build context
+        context = process_context(source_response)
 
-    # Step 4: Generate answer
-    answer = generate_answer(
-        question=request.message,
-        context=context,
-    )
+        # Step 4: Generate answer
+        answer = generate_answer(
+            question=request.message,
+            context=context,
+        )
 
-    return ChatResponse(
-        answer=answer,
-        route=source_response.get("route", "unknown"),
-        sources=source_response.get("sources", []),
-        reason=source_response.get("reason", ""),
-    )
+        return ChatResponse(
+            answer=answer,
+            route=source_response.get("route", "unknown"),
+            sources=source_response.get("sources", []),
+            reason=source_response.get("reason", ""),
+        )
+    except Exception as error:
+        print(f"[ERROR] /chat endpoint: {error}")
+        raise HTTPException(
+            status_code=500,
+            detail=f"Chat processing error: {str(error)}"
+        )

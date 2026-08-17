@@ -31,6 +31,17 @@ app.include_router(health.router)
 app.include_router(chat.router)
 app.include_router(webhook.router)
 
+
+@app.on_event("startup")
+def startup_event():
+    """Pre-load embedding models and vector database at startup."""
+    print("-> Pre-loading RAG engine and embedding models at startup...")
+    try:
+        chat.get_source_manager()
+        print("[OK] RAG engine pre-loaded and ready.")
+    except Exception as err:
+        print(f"[WARNING] Pre-loading engine error: {err}")
+
 @app.get("/")
 def root():
     return {
