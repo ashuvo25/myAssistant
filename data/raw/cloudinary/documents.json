@@ -1,0 +1,67 @@
+{
+  "source": "cloudinary",
+  "root_folder": "portfolio-ai",
+  "documents": [
+    {
+      "source": "cloudinary",
+      "category": "projects",
+      "public_id": "project_portfolio_detailed",
+      "resource_type": "image",
+      "format": "pdf",
+      "url": "https://res.cloudinary.com/dnbdcic4r/image/upload/v1786871276/project_portfolio_detailed.pdf",
+      "created_at": "2026-08-16T09:07:56Z",
+      "bytes": 9738,
+      "width": 595,
+      "height": 841
+    },
+    {
+      "source": "cloudinary",
+      "category": "publications",
+      "public_id": "Islam_VisText-Mosquito_A_Unified_Multimodal_Dataset_for_Visual_Detection_Segmentation_and_CVPRW_2026_paper",
+      "resource_type": "image",
+      "format": "pdf",
+      "url": "https://res.cloudinary.com/dnbdcic4r/image/upload/v1786896535/Islam_VisText-Mosquito_A_Unified_Multimodal_Dataset_for_Visual_Detection_Segmentation_and_CVPRW_2026_paper.pdf",
+      "created_at": "2026-08-16T16:08:55Z",
+      "bytes": 1559970,
+      "width": 612,
+      "height": 792
+    },
+    {
+      "source": "cloudinary",
+      "category": "publications",
+      "public_id": "51_When_a_Name_Is_Not_a_Name_A",
+      "resource_type": "image",
+      "format": "pdf",
+      "url": "https://res.cloudinary.com/dnbdcic4r/image/upload/v1786871286/51_When_a_Name_Is_Not_a_Name_A.pdf",
+      "created_at": "2026-08-16T09:08:06Z",
+      "bytes": 2731285,
+      "width": 595,
+      "height": 841
+    },
+    {
+      "source": "cloudinary",
+      "category": "publications",
+      "public_id": "86_Polite_on_the_Surface_Broke",
+      "resource_type": "image",
+      "format": "pdf",
+      "url": "https://res.cloudinary.com/dnbdcic4r/image/upload/v1786871280/86_Polite_on_the_Surface_Broke.pdf",
+      "created_at": "2026-08-16T09:08:00Z",
+      "bytes": 845569,
+      "width": 595,
+      "height": 841
+    },
+    {
+      "source": "cloudinary",
+      "category": "resume",
+      "public_id": "AI_resume_shuvo",
+      "resource_type": "image",
+      "format": "pdf",
+      "url": "https://res.cloudinary.com/dnbdcic4r/image/upload/v1786871278/AI_resume_shuvo.pdf",
+      "created_at": "2026-08-16T09:07:58Z",
+      "bytes": 200501,
+      "width": 612,
+      "height": 792
+    }
+  ],
+  "total_documents": 5
+}

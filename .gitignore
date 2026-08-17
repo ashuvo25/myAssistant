@@ -26,8 +26,7 @@ models/
 *.safetensors
 *.onnx
 
-# Data Storage & Chunks (chroma/ NOT ignored — needed for Render deployment)
-data/raw/
+# Data Storage & Chunks (chroma/ and raw/ NOT ignored — needed for Render deployment)
 data/extracted/
 data/cleaned/
 data/chunks/

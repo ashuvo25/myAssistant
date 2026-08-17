@@ -12,7 +12,6 @@ import json
 from pathlib import Path
 
 import chromadb
-from sentence_transformers import SentenceTransformer
 
 
 # =============================================================================
@@ -101,24 +100,20 @@ def main():
         f"\n[OK] Loaded chunks: {len(chunks)}"
     )
 
-    # -------------------------------------------------------------------------
-    # Load embedding model
-    # -------------------------------------------------------------------------
+    import chromadb.utils.embedding_functions as ef
 
     print(
-        f"\n-> Loading embedding model:"
+        f"\n-> Loading ONNX embedding model:"
     )
 
     print(
         f"  {MODEL_NAME}"
     )
 
-    model = SentenceTransformer(
-        MODEL_NAME
-    )
+    embedding_fn = ef.ONNXMiniLM_L6_V2()
 
     print(
-        "[OK] Embedding model loaded"
+        "[OK] ONNX Embedding model loaded"
     )
 
     # -------------------------------------------------------------------------
@@ -304,18 +299,8 @@ def main():
             start:end
         ]
 
-        # Generate embeddings.
-        embeddings = model.encode(
-            batch_texts,
-
-            batch_size=BATCH_SIZE,
-
-            show_progress_bar=False,
-
-            normalize_embeddings=True,
-        )
-
-        embeddings = embeddings.tolist()
+        # Generate embeddings via ONNX.
+        embeddings = embedding_fn(batch_texts)
 
         # Store in ChromaDB.
         collection.add(
@@ -374,10 +359,7 @@ def main():
         "\n-> Testing semantic retrieval..."
     )
 
-    query_embedding = model.encode(
-        [test_query],
-        normalize_embeddings=True,
-    ).tolist()
+    query_embedding = embedding_fn([test_query])
 
     results = collection.query(
         query_embeddings=query_embedding,

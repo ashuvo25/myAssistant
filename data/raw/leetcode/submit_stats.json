@@ -1,0 +1,46 @@
+{
+  "acSubmissionNum": [
+    {
+      "difficulty": "All",
+      "count": 54,
+      "submissions": 87
+    },
+    {
+      "difficulty": "Easy",
+      "count": 43,
+      "submissions": 68
+    },
+    {
+      "difficulty": "Medium",
+      "count": 11,
+      "submissions": 19
+    },
+    {
+      "difficulty": "Hard",
+      "count": 0,
+      "submissions": 0
+    }
+  ],
+  "totalSubmissionNum": [
+    {
+      "difficulty": "All",
+      "count": 60,
+      "submissions": 119
+    },
+    {
+      "difficulty": "Easy",
+      "count": 45,
+      "submissions": 87
+    },
+    {
+      "difficulty": "Medium",
+      "count": 15,
+      "submissions": 32
+    },
+    {
+      "difficulty": "Hard",
+      "count": 0,
+      "submissions": 0
+    }
+  ]
+}

@@ -1,0 +1,237 @@
+{
+  "source": "google",
+  "projects": [
+    {
+      "title": "NBR VAT Assistant",
+      "disctiption": "Built a Bengali/English RAG system for Bangladesh VAT law QA with page-level citations. Implemented hybrid dense +\r\nBM25 retrieval, Reciprocal Rank Fusion, and cross-encoder reranking for reliable legal document retrieval.\r\nâ¢ Designed a bilingual evaluation set and resolved legacy PDF encoding issues across the source corpus.",
+      "tool_language": "Python, bge-m3, ChromaDB, BM25, Cross-Encoder, OpenAI API",
+      "image": "https://res.cloudinary.com/dnbdcic4r/image/upload/v1786298111/img1.jpg",
+      "does_production": "",
+      "url": "https://github.com/ashuvo25/nbr-vat-assistant"
+    },
+    {
+      "title": "AGRONEST",
+      "disctiption": "AI-Powered Agricultural Decision System â a full-stack social + AI platform for farmers and agricultural communities.\r\n\r\nSocial media features: post, like, comment, add friends\r\nCrop disease detection using Computer Vision (YOLO)\r\nAI-powered analysis & recommendations via LLM integration",
+      "tool_language": "Next.js,\r\nFastAPI,\r\nYOLO,\r\nLLM,\r\nPostgreSQL,\r\nTensorFlow,",
+      "image": "https://res.cloudinary.com/dnbdcic4r/image/upload/agronest.jpeg",
+      "does_production": "",
+      "url": "https://github.com/ashuvo25/AgroNest_LLM-ML"
+    },
+    {
+      "title": "SyllabusAI",
+      "disctiption": "Paste any YouTube link. Our AI breaks it into quizzes, flashcards, and a day-by-day study calendar â so you actually remember what you watched.",
+      "tool_language": "Python, NextJS, ChatGPT, YoutubeAPI",
+      "image": "https://res.cloudinary.com/dnbdcic4r/image/upload/v1784122339/sai.jpg",
+      "does_production": "yes",
+      "url": "https://www.syllabusai.pro/"
+    },
+    {
+      "title": "Agro-Scout",
+      "disctiption": "An autonomous agricultural rover that combines robotics with AI for smart farming field operations.\r\n\r\nDual mode: fully autonomous and remote control operation\r\nAutomatic crop disease detection using onboard cameras\r\nAutomated soil sample collection from infected areas",
+      "tool_language": "Raspberry Pi, Computer Vision, IoT, Robotics, Python",
+      "image": "https://res.cloudinary.com/dnbdcic4r/image/upload/agrogenisis.jpeg",
+      "does_production": "",
+      "url": "https://github.com/Rifat-Rahman06/Agro-Scout"
+    },
+    {
+      "title": "UIU Assistant - RAG Chatbot",
+      "disctiption": "A RAG-based intelligent chatbot for United International University that answers queries using live university data.\n\nWeb crawler for scraping and indexing UIU website content,\r\nVector database (Pinecone) for semantic search & retrieval,\r\nGroq-powered LLM for fast, accurate response generation,\r\nRetrieval-Augmented Generation (RAG) architecture",
+      "tool_language": "Python, LangChain, Pinecone,Groq, Web Scraping",
+      "image": "https://res.cloudinary.com/dnbdcic4r/image/upload/ragchat.png",
+      "does_production": "",
+      "url": "https://github.com/ashuvo25/UIU-assistant"
+    }
+  ],
+  "social": [
+    {
+      "paper": "5",
+      "award": "3",
+      "cp_count": "260",
+      "github": "https://github.com/ashuvo25",
+      "linkdin": "https://www.linkedin.com/in/asaduzzaman-shuvo/",
+      "codeforces": "https://codeforces.com/profile/shuvo_o",
+      "leetcode": "https://leetcode.com/u/shuvo_o/",
+      "googlescolars": "https://scholar.google.com/citations?user=pRglCCkAAAAJ&hl=en"
+    }
+  ],
+  "work_updates": [
+    {
+      "date": "18-11-2023",
+      "title": "1st Runners up, Database management system",
+      "description": "UIU CSE Project Show",
+      "type": "Project",
+      "link": "no links",
+      "": "research \ndevelopment \nachievement\nlearning\nvisition\npaper accepte"
+    },
+    {
+      "date": "28-1-2025",
+      "title": "2nd Runners up, System Analysis and Design Laboratory",
+      "description": "UIU CSE Project Show",
+      "type": "Project",
+      "link": "no links",
+      "": ""
+    },
+    {
+      "date": "28-1-2025",
+      "title": "3nd Runners up,  Microprocessors and Microcontrollers Laboratory",
+      "description": "UIU CSE Project Show",
+      "type": "Project",
+      "link": "no links",
+      "": ""
+    },
+    {
+      "date": "2-4-2026",
+      "title": "CVPR 2026 Workshop AI4RWC Paper Accepted",
+      "description": "VisText-Mosquito: A Unified Multimodal Dataset for Visual Detection, Segmentation, and Textual Explanation on Mosquito Breeding Sites",
+      "type": "paper accepte",
+      "link": "https://arxiv.org/abs/2506.14629",
+      "": ""
+    },
+    {
+      "date": "15-02-2025",
+      "title": "Paper accepted in Springer LNNS series and oral presentation at the CIIR 2025 Conference!",
+      "description": "ADDomics: Enhancing Multidimics Fusion with Autoencoders and Deep Neural Networks",
+      "type": "paper accepte",
+      "link": "https://ieeexplore.ieee.org/document/11144973",
+      "": ""
+    },
+    {
+      "date": "10-08-2025",
+      "title": "Paper accepted for presentation at the IEEE Region Conference TENCOM",
+      "description": "VisText-Mosquito: A Multimodal Dataset and Benchmark for AI-Based Mosquito Breeding Site Detection and Reasoning",
+      "type": "paper accepte",
+      "link": "https://arxiv.org/abs/2506.14629",
+      "": ""
+    },
+    {
+      "date": "08-04-2025",
+      "title": "Paper accepte in 2025 IEEE Region 10 Symposium (TENSYMP)",
+      "description": "ADDomics: Enhancing Multidimics Fusion with Autoencoders and Deep Neural Networks",
+      "type": "paper accepte",
+      "link": "https://ieeexplore.ieee.org/document/11144973",
+      "": ""
+    },
+    {
+      "date": "11-10-2024",
+      "title": "For UIU CSE Project Show",
+      "description": "Developing AgroNest: A project for the System Analysis and Design Laboratory",
+      "type": "Project",
+      "link": "https://github.com/ashuvo25/AgroNest_LLM-ML",
+      "": ""
+    },
+    {
+      "date": "09-09-2024",
+      "title": "For UIU CSE Project Show",
+      "description": "Developing AgroGenisis: A project for Microprocessors and Microcontrollers Laboratory",
+      "type": "Project",
+      "link": "",
+      "": ""
+    },
+    {
+      "date": "10-5-2026",
+      "title": "Build a small Project",
+      "description": "Personal Finance Tracker and Analyzer-Using numPy and  Pandas",
+      "type": "Project",
+      "link": "https://github.com/ashuvo25/Personal-Finance-Tracker-and-Analyzer.git",
+      "": ""
+    },
+    {
+      "date": "",
+      "title": "",
+      "description": "",
+      "type": "",
+      "link": "",
+      "": ""
+    },
+    {
+      "date": "15-5-2026",
+      "title": "AI Fluency for students",
+      "description": "completed the \"AI Fluency for Students course\", certified by Anthropic !",
+      "type": "learning",
+      "link": "no links",
+      "": ""
+    },
+    {
+      "date": "25-7-2026",
+      "title": "Served as Academic Reviewer for the",
+      "description": "COLM 2026 Workshop CBW",
+      "type": "achievement",
+      "link": "https://context-beyond-window.github.io/",
+      "": ""
+    },
+    {
+      "date": "7-7-2026",
+      "title": "Defended my undergraduate thesis",
+      "description": "WADE: A Waste Annotation Reasoning-Chain Dataset and Distillation Framework for Low-Resource Vision-Language Models",
+      "type": "achievement",
+      "link": "no links",
+      "": ""
+    },
+    {
+      "date": "10-8-2026",
+      "title": "Served as Academic Reviewer for the",
+      "description": "COLM 2026 Workshop on Efficient Reasoning",
+      "type": "achievement",
+      "link": "https://wdlctc.github.io/efficient-reasoning-2026/",
+      "": ""
+    }
+  ],
+  "research_updates": [
+    {
+      "title": "When a Name Is Not a Name: A Benchmark Dataset and Distilled Reasoning for Culturally Entangled Bangla Homographs in Low-Resource LLMs",
+      "role": "FIRST AUTHOR",
+      "status": "Under Review",
+      "venue": "arxiv",
+      "category": "Arxiv",
+      "objective": "When a Name Is Not a Name: A Benchmark Dataset and Distilled Reasoning for Culturally Entangled Bangla Homographs in Low-Resource LLMs",
+      "tools": "\"Qwen\", \"Llama\", \"Bangla NLP\", \"Lora\",\"Dataset Engineering\"",
+      "link": "https://arxiv.org/abs/2607.17828",
+      "accent": "emerald",
+      "domain": "Natural Language Processing",
+      "paperImage": "https://res.cloudinary.com/dnbdcic4r/image/upload/v1784710641/port.jpg"
+    },
+    {
+      "title": "Polite on the Surface, Wrong in Practice: A Curated Dataset for Fixing Honorific Failures in Multilingual Bangla Generation",
+      "role": "FIRST AUTHOR",
+      "status": "Under Review",
+      "venue": "arxiv",
+      "category": "Arxiv",
+      "objective": "A large-scale adaptive dataset engine for Bangla language models, addressing data scarcity in low-resource NLP by generating diverse, high-quality training corpora.",
+      "tools": "\"DeepSeek\", \"Llama\", \"Bangla NLP\", \"Dataset Engineering\"",
+      "link": "https://arxiv.org/abs/2605.22487",
+      "accent": "emerald",
+      "domain": "Natural Language Processing",
+      "paperImage": "https://res.cloudinary.com/dnbdcic4r/image/upload/blade.jpeg"
+    },
+    {
+      "title": "VisText-Mosquito: A Unified Multimodal Dataset for Visual Detection, Segmentation, and Textual Explanation on Mosquito Breeding Sites",
+      "role": "FIRST AUTHOR",
+      "status": "Published",
+      "venue": "CVPR",
+      "category": "Workshop",
+      "objective": "A multimodal vision-language framework for automated mosquito species classification using zero-shot and few-shot learning approaches.",
+      "tools": "\"Computer Vision\", \"VLM\", \"Zero-Shot Learning\", \"YOLO\"",
+      "link": "https://openaccess.thecvf.com/content/CVPR2026W/AI4RWC/html/Islam_VisText-Mosquito_A_Unified_Multimodal_Dataset_for_Visual_Detection_Segmentation_and_CVPRW_2026_paper.html",
+      "accent": "emerald",
+      "domain": "Computer Vision and VLMs",
+      "paperImage": "https://res.cloudinary.com/dnbdcic4r/image/upload/vistext.jpeg"
+    },
+    {
+      "title": "ADDomics: Enhancing Multidimics Fusion with Autoencoders and Deep Neural Networks",
+      "role": "CO-AUTHOR",
+      "status": "Published",
+      "venue": "Tensymp",
+      "category": "Conference",
+      "objective": "An integrated genomics data platform for addiction research, combining multi-omics analysis with machine learning for biomarker discovery.",
+      "tools": "\"Genomics\", \"Machine Learning\", \"Data Platform\", \"Bioinformatics\"",
+      "link": "https://ieeexplore.ieee.org/document/11144973",
+      "accent": "blue",
+      "domain": "Computational Biology",
+      "paperImage": "https://res.cloudinary.com/dnbdcic4r/image/upload/addono.jpeg"
+    }
+  ],
+  "my_update": {
+    "document_id": "1Hsw7WNk3jdZkXTUtMMI5l18XJGpiAkfAkh2Sq1RJPzc",
+    "text": ""
+  }
+}

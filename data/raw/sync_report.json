@@ -1,0 +1,24 @@
+{
+  "sync_started_at": "2026-08-17T05:47:07.477003+00:00",
+  "sync_finished_at": "2026-08-17T05:47:26.238406+00:00",
+  "sources": {
+    "github": {
+      "status": "success",
+      "profile": true,
+      "repositories": 27,
+      "events": 30
+    },
+    "leetcode": {
+      "status": "success",
+      "username": "shuvo_o",
+      "stats": true
+    },
+    "google": {
+      "status": "success"
+    },
+    "cloudinary": {
+      "status": "success",
+      "documents": 5
+    }
+  }
+}
