@@ -39,9 +39,6 @@ DEFAULT_TOP_K = 5
 MAX_DISTANCE = 1.8
 
 
-import gc
-import torch
-
 try:
     torch.set_num_threads(1)
 except Exception:
@@ -62,20 +59,18 @@ class PortfolioRetriever:
         self.top_k = top_k
 
         print(
-            f"-> Loading embedding model: "
+            f"-> Loading ONNX embedding model: "
             f"{MODEL_NAME}"
         )
 
         gc.collect()
 
-        self.model = SentenceTransformer(
-            MODEL_NAME
-        )
+        self.embedding_fn = ef.ONNXMiniLM_L6_V2()
 
         gc.collect()
 
         print(
-            "[OK] Embedding model loaded"
+            "[OK] ONNX Embedding model loaded"
         )
 
         # ---------------------------------------------------------------------
@@ -102,6 +97,10 @@ class PortfolioRetriever:
             f"{self.collection.count()}"
         )
 
+        print(
+            "[OK] ChromaDB retriever ready"
+        )
+
     # =========================================================================
     # RETRIEVE
     # =========================================================================
@@ -109,32 +108,23 @@ class PortfolioRetriever:
     def retrieve(
         self,
         query: str,
-        top_k: int | None = None,
-    ):
+        top_k: Optional[int] = None,
+    ) -> List[Dict]:
         """
-        Retrieve the most relevant chunks for a query.
-
-        Uses a two-stage approach:
-          1. First search high-priority chunks (resume/projects)
-          2. If < 2 results, fall back to all chunks
+        Retrieve the most relevant chunks for a query using ONNX embeddings.
         """
 
         if not query.strip():
-
             return []
 
         if top_k is None:
             top_k = self.top_k
 
         # ---------------------------------------------------------------------
-        # Convert query into embedding
+        # Convert query into embedding via ONNX
         # ---------------------------------------------------------------------
 
-        query_embedding = self.model.encode(
-            [query],
-
-            normalize_embeddings=True,
-        ).tolist()
+        query_embedding = self.embedding_fn([query])
 
         # ---------------------------------------------------------------------
         # Stage 1: Search high-priority chunks first (resume & projects)
