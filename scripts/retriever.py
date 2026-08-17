@@ -39,6 +39,15 @@ DEFAULT_TOP_K = 5
 MAX_DISTANCE = 1.8
 
 
+import gc
+import torch
+
+try:
+    torch.set_num_threads(1)
+except Exception:
+    pass
+
+
 # =============================================================================
 # RETRIEVER
 # =============================================================================
@@ -57,9 +66,13 @@ class PortfolioRetriever:
             f"{MODEL_NAME}"
         )
 
+        gc.collect()
+
         self.model = SentenceTransformer(
             MODEL_NAME
         )
+
+        gc.collect()
 
         print(
             "[OK] Embedding model loaded"
