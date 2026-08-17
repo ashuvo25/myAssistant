@@ -12,10 +12,11 @@ Output:
     Top-K relevant chunks with metadata and similarity information
 """
 
+import gc
 from pathlib import Path
 
 import chromadb
-from sentence_transformers import SentenceTransformer
+import chromadb.utils.embedding_functions as ef
 
 
 # =============================================================================
