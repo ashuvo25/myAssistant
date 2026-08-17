@@ -30,8 +30,8 @@ from typing import Any, Dict, List
 # CONFIGURATION
 # =============================================================================
 
-MAX_CHROMA_RESULTS = 2
-MAX_CHROMA_CHARS = 1200
+MAX_CHROMA_RESULTS = 4
+MAX_CHROMA_CHARS = 2500
 
 MAX_GITHUB_EVENTS = 10
 MAX_GITHUB_REPOSITORIES = 6
@@ -312,7 +312,7 @@ def process_github(
         # Filter based on the question.
         if query_mentions_today(query):
 
-            events = [
+            today_events = [
                 event
                 for event in events
                 if is_today(
@@ -322,6 +322,11 @@ def process_github(
                     )
                 )
             ]
+
+            if today_events:
+                events = today_events
+            else:
+                output.append("\nNote: No GitHub events logged specifically for today. Showing recent activity:")
 
         elif query_mentions_recent(query):
 
@@ -1152,12 +1157,29 @@ def build_context(
             )
 
     # -------------------------------------------------------------------------
+    # Route-based context hint
+    # -------------------------------------------------------------------------
+
+    route_hints = {
+        "portfolio": "The following is Shuvo's portfolio information:",
+        "google": "The following are Shuvo's recent work updates and achievements:",
+        "github": "The following is Shuvo's GitHub activity:",
+        "leetcode": "The following are Shuvo's LeetCode statistics:",
+        "hybrid": "The following is Shuvo's portfolio and recent activity information:",
+    }
+
+    hint = route_hints.get(route, "")
+
+    # -------------------------------------------------------------------------
     # Final context
     # -------------------------------------------------------------------------
 
     final_context = "\n\n".join(
         sections
     )
+
+    if hint:
+        final_context = hint + "\n\n" + final_context
 
     return truncate(
         final_context,

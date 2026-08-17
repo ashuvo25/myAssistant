@@ -32,9 +32,11 @@ CHROMA_DIR = (
 
 COLLECTION_NAME = "portfolio_documents"
 
-MODEL_NAME = "BAAI/bge-m3"
+MODEL_NAME = "all-MiniLM-L6-v2"
 
 DEFAULT_TOP_K = 5
+
+MAX_DISTANCE = 1.8
 
 
 # =============================================================================
@@ -122,54 +124,37 @@ class PortfolioRetriever:
         ).tolist()
 
         # ---------------------------------------------------------------------
-        # Stage 1: Search high-priority chunks only
+        # Stage 1: Search high-priority chunks first (resume & projects)
         # ---------------------------------------------------------------------
 
         try:
-
             high_results = self.collection.query(
-
                 query_embeddings=query_embedding,
-
                 n_results=top_k,
-
                 where={
                     "priority": "high",
                 },
-
                 include=[
                     "documents",
                     "metadatas",
                     "distances",
                 ],
             )
-
-            high_docs = high_results.get(
-                "documents",
-                [[]],
-            )[0]
-
+            high_docs = high_results.get("documents", [[]])[0]
         except Exception:
-
             high_docs = []
             high_results = None
 
         # ---------------------------------------------------------------------
-        # Stage 2: Fall back to all chunks if needed
+        # Stage 2: Use high-priority results if found, else search all chunks
         # ---------------------------------------------------------------------
 
-        if len(high_docs) >= 2 and high_results:
-
+        if high_docs and high_results:
             results = high_results
-
         else:
-
             results = self.collection.query(
-
                 query_embeddings=query_embedding,
-
                 n_results=top_k,
-
                 include=[
                     "documents",
                     "metadatas",
@@ -217,6 +202,16 @@ class PortfolioRetriever:
                     "metadata": metadata,
                 }
             )
+
+        # Filter out low-relevance chunks (distance > threshold)
+        retrieved = [
+            r for r in retrieved
+            if r["distance"] <= MAX_DISTANCE
+        ]
+
+        # Re-number ranks after filtering
+        for i, r in enumerate(retrieved):
+            r["rank"] = i + 1
 
         return retrieved
 

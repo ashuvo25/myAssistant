@@ -14,14 +14,14 @@ GitHub / LeetCode / Google / ChromaDB
  ↓
 Context Processor
  ↓
-Qwen
+GPT-4o-mini
  ↓
 Answer
 """
 
 from source_manager import SourceManager
 from context_processor import process_context
-from qwen_client import generate_answer
+from llm_client import generate_answer
 
 
 # =============================================================================

@@ -39,7 +39,7 @@ CHROMA_DIR = (
 # CONFIGURATION
 # =============================================================================
 
-MODEL_NAME = "BAAI/bge-m3"
+MODEL_NAME = "all-MiniLM-L6-v2"
 
 COLLECTION_NAME = "portfolio_documents"
 

@@ -118,6 +118,9 @@ Answer the user's question accurately using ONLY the facts provided in the Conte
 - State facts clearly and directly.
 - Do NOT repeat any list items or sentences.
 - Never invent details or dates.
+- Do NOT guess URLs, dates, or statistics. Only state what appears in the context.
+- If a project or paper title is given, use the exact title from the context.
+- Do NOT add explanations or elaborations beyond what the context states.
 - Keep your response concise (3-5 items or sentences maximum).
 - If the context does not contain relevant information, state that the information is not available in the portfolio data.
 <|im_end|>
@@ -189,6 +192,27 @@ Question: {question}
                 return phrase
             if phrase in answer:
                 answer = answer.replace(phrase, "").strip()
+
+        # Strip hallucinated URL placeholders like "(Link)" or "(Link to GitHub)"
+        import re
+        answer = re.sub(
+            r'\s*\(Link[^)]*\)',
+            '',
+            answer,
+        )
+
+        # Strip trailing incomplete sentences (cut off mid-word)
+        if answer and not answer[-1] in '.!?:)"\'':
+            last_sentence_end = max(
+                answer.rfind('. '),
+                answer.rfind('? '),
+                answer.rfind('! '),
+                answer.rfind('.\n'),
+                answer.rfind('?\n'),
+                answer.rfind('!\n'),
+            )
+            if last_sentence_end > len(answer) * 0.5:
+                answer = answer[:last_sentence_end + 1]
 
         if not answer:
 

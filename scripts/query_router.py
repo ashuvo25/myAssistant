@@ -20,12 +20,17 @@ from typing import Dict, List
 # SOURCE DETECTION
 # =============================================================================
 
-def contains_any(text: str, keywords: List[str]) -> bool:
-    text = text.lower()
+def contains_word(text: str, keyword: str) -> bool:
+    """Check if keyword matches as a standalone word/phrase in text."""
+    pattern = r'\b' + re.escape(keyword.lower()) + r'\b'
+    return bool(re.search(pattern, text.lower()))
 
+
+def contains_any(text: str, keywords: List[str]) -> bool:
+    """Return True if any keyword matches as a standalone word/phrase in text."""
     return any(
-        keyword.lower() in text
-        for keyword in keywords
+        contains_word(text, kw)
+        for kw in keywords
     )
 
 
@@ -60,6 +65,8 @@ def route_query(query: str) -> Dict:
         "hi",
         "hello",
         "hey",
+        "howdy",
+        "greetings",
         "how are you",
         "good morning",
         "good evening",
@@ -68,20 +75,49 @@ def route_query(query: str) -> Dict:
         "thank you",
         "bye",
         "goodbye",
+        "who are you",
+        "what can you do",
     ]
 
-    # Only treat very short greetings as conversation.
+    conversation_exclusions = [
+        "shuvo",
+        "shuvo's",
+        "shuvo is",
+        "he",
+        "his",
+        "him",
+        "he's",
+        "himself",
+        "leetcode",
+        "github",
+        "project",
+        "projects",
+        "paper",
+        "papers",
+        "repo",
+        "repos",
+        "resume",
+        "cv",
+        "code",
+        "work",
+        "cgpa",
+        "gpa",
+        "university",
+        "degree",
+        "award",
+        "awards",
+        "skills",
+        "tech",
+        "technology",
+        "tools",
+        "cloudinary",
+    ]
+
+    # Only treat pure short greetings as conversation.
     if (
         len(q.split()) <= 6
         and contains_any(q, conversation_patterns)
-        and not contains_any(
-            q,
-            [
-                "shuvo",
-                "shuvo's",
-                "shuvo is",
-            ],
-        )
+        and not contains_any(q, conversation_exclusions)
     ):
         return {
             "route": "conversation",
@@ -104,6 +140,9 @@ def route_query(query: str) -> Dict:
         "recently",
         "latest",
         "this week",
+        "last week",
+        "past week",
+        "this month",
         "activity",
         "activities",
         "what did i do",
@@ -157,16 +196,50 @@ def route_query(query: str) -> Dict:
     leetcode_keywords = [
         "leetcode",
         "leet code",
+        "shuvo_o",
         "coding problem",
         "coding problems",
         "solved problems",
         "problems solved",
         "competitive programming",
+        "cp",
+        "solved",
+        "problem",
+        "problems",
+        "contest",
+        "rank",
+        "rating",
+        "handle",
     ]
 
     leetcode_requested = contains_any(
         q,
         leetcode_keywords
+    )
+
+    # -------------------------------------------------------------------------
+    # CLOUDINARY
+    # -------------------------------------------------------------------------
+
+    cloudinary_keywords = [
+        "cloudinary",
+        "image",
+        "images",
+        "photo",
+        "photos",
+        "picture",
+        "pictures",
+        "diagram",
+        "diagrams",
+        "asset",
+        "assets",
+        "screenshot",
+        "screenshots",
+    ]
+
+    cloudinary_requested = contains_any(
+        q,
+        cloudinary_keywords
     )
 
     # -------------------------------------------------------------------------
@@ -191,6 +264,15 @@ def route_query(query: str) -> Dict:
         "what has he done today",
         "what did shuvo do today",
         "what has shuvo done today",
+        "award",
+        "awards",
+        "achievement",
+        "achievements",
+        "runner up",
+        "runner-up",
+        "acceptance",
+        "accepted",
+        "conference",
     ]
 
     google_requested = contains_any(
@@ -228,6 +310,20 @@ def route_query(query: str) -> Dict:
         "skills",
         "technology",
         "technologies",
+        "tool",
+        "tools",
+        "stack",
+        "tech stack",
+        "framework",
+        "language",
+        "languages",
+        "know",
+        "use",
+        "work with",
+        "degree",
+        "university",
+        "cgpa",
+        "gpa",
         "what does shuvo do",
         "what does he do",
         "what does shuvo actually do",
@@ -283,7 +379,15 @@ def route_query(query: str) -> Dict:
             "project",
             "projects",
             "built",
+            "build",
             "developed",
+            "develop",
+            "make",
+            "made",
+            "create",
+            "created",
+            "work on",
+            "worked on",
             "research",
             "paper",
             "papers",
@@ -401,6 +505,11 @@ TEST_QUERIES = [
     "Tell me about Shuvo",
     "What does Shuvo actually do?",
     "Hi, do you know Shuvo?",
+    "What tools does Shuvo use?",
+    "What awards has Shuvo won?",
+    "What did Shuvo build?",
+    "What is Shuvo's tech stack?",
+    "What conferences has Shuvo published at?",
 ]
 
 

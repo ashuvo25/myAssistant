@@ -1,0 +1,34 @@
+services:
+  - type: web
+    name: shuvo-portfolio-chatbot
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_MODEL
+        value: gpt-4o-mini
+      - key: GITHUB_USERNAME
+        value: ashuvo25
+      - key: GITHUB_TOKEN
+        sync: false
+      - key: LEETCODE_USERNAME
+        value: shuvo_o
+      - key: GOOGLE_SCRIPT_URL
+        sync: false
+      - key: GOOGLE_PROJECTS_SHEET_ID
+        sync: false
+      - key: GOOGLE_SOCIAL_SHEET_ID
+        sync: false
+      - key: GOOGLE_WORK_UPDATES_SHEET_ID
+        sync: false
+      - key: GOOGLE_RESEARCH_UPDATES_SHEET_ID
+        sync: false
+      - key: GOOGLE_MY_UPDATE_DOC_ID
+        sync: false
+      - key: ALLOWED_ORIGINS
+        value: http://localhost:3000,https://ashuvo25.github.io
+      - key: PYTHON_VERSION
+        value: "3.11.9"
