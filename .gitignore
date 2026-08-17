@@ -1,0 +1,49 @@
+# Python Virtual Environment
+venv/
+.venv/
+env/
+ENV/
+
+# Environment Variables & Secrets
+.env
+.env.local
+.env.*
+*.env
+
+# Python Cache & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Large Model Binaries & Quantized Models
+models/
+*.gguf
+*.bin
+*.pt
+*.safetensors
+*.onnx
+
+# Data Storage, Vector DBs, & Chunks
+data/chroma/
+data/raw/
+data/extracted/
+data/cleaned/
+data/chunks/
+knowledge/
+*.pkl
+*.sqlite3
+*.db
+
+# Temporary & Test Scripts
+scripts/_test_*.py
+scripts/_inspect_*.py
+
+# IDE & OS Specific Files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
