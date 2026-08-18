@@ -104,9 +104,25 @@
       "": ""
     },
     {
+      "date": "2026",
+      "title": "arXiv preprint arXiv:2605.22487 (Under Review)",
+      "description": "Polite on the Surface, Broken in Practice: A Curated Dataset for Fixing Generation and Register Failures in Low-Resource Bangla Text Generation. Authors: MA Shuvo, M Hasan, MT Parvez, AH Noman, MSH Ovi",
+      "type": "paper accepte",
+      "link": "https://arxiv.org/abs/2605.22487",
+      "": ""
+    },
+    {
+      "date": "2026",
+      "title": "arXiv preprint arXiv:2607.17828 (Under Review)",
+      "description": "When a Name Is Not a Name: A Benchmark Dataset and Distilled Reasoning for Culturally Entangled Bangla Homographs in Low-Resource LLMs. Author: MA Shuvo",
+      "type": "paper accepte",
+      "link": "https://arxiv.org/abs/2607.17828",
+      "": ""
+    },
+    {
       "date": "08-04-2025",
       "title": "Paper accepte in 2025 IEEE Region 10 Symposium (TENSYMP)",
-      "description": "ADDomics: Enhancing Multidimics Fusion with Autoencoders and Deep Neural Networks",
+      "description": "ADDomics: Enhancing Multiomics Fusion with Autoencoders and Deep Neural Networks",
       "type": "paper accepte",
       "link": "https://ieeexplore.ieee.org/document/11144973",
       "": ""
