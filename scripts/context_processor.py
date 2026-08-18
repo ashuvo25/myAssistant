@@ -39,9 +39,9 @@ MAX_GITHUB_CHARS = 1500
 
 MAX_LEETCODE_CHARS = 1000
 
-MAX_GOOGLE_CHARS = 1500
+MAX_GOOGLE_CHARS = 2500
 
-MAX_TOTAL_CONTEXT_CHARS = 3000
+MAX_TOTAL_CONTEXT_CHARS = 4000
 
 
 # =============================================================================
@@ -683,6 +683,29 @@ def process_google(
             "\n".join(output),
             MAX_GOOGLE_CHARS,
         )
+
+    # -------------------------------------------------------------------------
+    # Featured Projects
+    # -------------------------------------------------------------------------
+
+    projects = data.get("projects", [])
+    if isinstance(projects, list) and projects:
+        output.append("\nFeatured AI Projects:")
+        for proj in projects:
+            if not isinstance(proj, dict):
+                continue
+            title = clean_text(proj.get("title", ""))
+            description = clean_text(proj.get("description", proj.get("disctiption", "")))
+            tools = clean_text(proj.get("tool_language", ""))
+            url = clean_text(proj.get("url", ""))
+            line = f"- {title}"
+            if description:
+                line += f": {description}"
+            if tools:
+                line += f" [Tech: {tools}]"
+            if url:
+                line += f" [Link: {url}]"
+            output.append(line)
 
     # -------------------------------------------------------------------------
     # Work updates — convert to human-readable sentences
