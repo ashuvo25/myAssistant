@@ -1,30 +1,27 @@
 {
   "username": "shuvo_o",
   "profile": {
-    "realName": "Md. Asaduzzaman Shuvo",
-    "aboutMe": "Competitive Programmer | Web Developer | Gamer | Undergraduate CS Student",
-    "ranking": 2524595,
-    "contestRating": 1591,
-    "topPercentage": "25.51%",
-    "activeDays": 22,
-    "maxStreak": 15
+    "realName": "Md Asaduzzaman Shuvo",
+    "aboutMe": "👨‍💻 Competitive Programmer | 🌐 Web Developer | 🎮Gamer | 📖Undergraduate CS Student | 👨‍💻 Interested In Software development",
+    "userAvatar": "https://assets.leetcode.com/users/shuvo_o/avatar_1735329623.png",
+    "ranking": 2498883
   },
-  "submit_stats": {
-    "accepted": [
+  "submitStats": {
+    "acSubmissionNum": [
       {
         "difficulty": "All",
-        "count": 54,
-        "submissions": 54
+        "count": 55,
+        "submissions": 88
       },
       {
         "difficulty": "Easy",
-        "count": 43,
-        "submissions": 43
+        "count": 44,
+        "submissions": 69
       },
       {
         "difficulty": "Medium",
         "count": 11,
-        "submissions": 11
+        "submissions": 19
       },
       {
         "difficulty": "Hard",
@@ -32,11 +29,26 @@
         "submissions": 0
       }
     ],
-    "total": [
+    "totalSubmissionNum": [
       {
         "difficulty": "All",
-        "count": 54,
-        "submissions": 54
+        "count": 61,
+        "submissions": 121
+      },
+      {
+        "difficulty": "Easy",
+        "count": 46,
+        "submissions": 89
+      },
+      {
+        "difficulty": "Medium",
+        "count": 15,
+        "submissions": 32
+      },
+      {
+        "difficulty": "Hard",
+        "count": 0,
+        "submissions": 0
       }
     ]
   }

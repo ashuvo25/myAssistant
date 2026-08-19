@@ -2,8 +2,16 @@
   "source": "google",
   "projects": [
     {
+      "title": "Victor Von Doom AI",
+      "disctiption": "The RAG architecture follows this process:\nUser question → Query routing → Relevant information retrieval → Context generation → LLM response → Source information\n\nDoom AI: can answer questions about my:\n→ Research and publications\n→ AI and software projects\n→ Technical skills\n→ Education and achievements\n→ Recent activities",
+      "tool_language": "Technologies and concepts used in this project:\r\n→ Next.js and TypeScript\r\n→ Tailwind CSS\r\n→ REST API integration\r\n→ Retrieval-Augmented Generation\r\n→ GPT-4o-mini\r\n→ Knowledge routing and context retrieval\r\n→ Source-grounded responses\r\n→ Backend health monitoring\r\n→ Retry and error-handling mechanisms\r\n→ Deployment on Render",
+      "image": "https://res.cloudinary.com/dnbdcic4r/image/upload/v1787146134/linkndin1.jpg",
+      "does_production": "yes",
+      "url": "https://ashuvo25.github.io/portfolio-asadshuvo/chat"
+    },
+    {
       "title": "NBR VAT Assistant",
-      "disctiption": "Built a Bengali/English RAG system for Bangladesh VAT law QA with page-level citations. Implemented hybrid dense +\r\nBM25 retrieval, Reciprocal Rank Fusion, and cross-encoder reranking for reliable legal document retrieval.\r\nâ¢ Designed a bilingual evaluation set and resolved legacy PDF encoding issues across the source corpus.",
+      "disctiption": "Built a Bengali/English RAG system for Bangladesh VAT law QA with page-level citations. Implemented hybrid dense +\r\nBM25 retrieval, Reciprocal Rank Fusion, and cross-encoder reranking for reliable legal document retrieval.\r\n• Designed a bilingual evaluation set and resolved legacy PDF encoding issues across the source corpus.",
       "tool_language": "Python, bge-m3, ChromaDB, BM25, Cross-Encoder, OpenAI API",
       "image": "https://res.cloudinary.com/dnbdcic4r/image/upload/v1786298111/img1.jpg",
       "does_production": "",
@@ -11,7 +19,7 @@
     },
     {
       "title": "AGRONEST",
-      "disctiption": "AI-Powered Agricultural Decision System â a full-stack social + AI platform for farmers and agricultural communities.\r\n\r\nSocial media features: post, like, comment, add friends\r\nCrop disease detection using Computer Vision (YOLO)\r\nAI-powered analysis & recommendations via LLM integration",
+      "disctiption": "AI-Powered Agricultural Decision System — a full-stack social + AI platform for farmers and agricultural communities.\r\n\r\nSocial media features: post, like, comment, add friends\r\nCrop disease detection using Computer Vision (YOLO)\r\nAI-powered analysis & recommendations via LLM integration",
       "tool_language": "Next.js,\r\nFastAPI,\r\nYOLO,\r\nLLM,\r\nPostgreSQL,\r\nTensorFlow,",
       "image": "https://res.cloudinary.com/dnbdcic4r/image/upload/agronest.jpeg",
       "does_production": "",
@@ -19,7 +27,7 @@
     },
     {
       "title": "SyllabusAI",
-      "disctiption": "Paste any YouTube link. Our AI breaks it into quizzes, flashcards, and a day-by-day study calendar â so you actually remember what you watched.",
+      "disctiption": "Paste any YouTube link. Our AI breaks it into quizzes, flashcards, and a day-by-day study calendar — so you actually remember what you watched.",
       "tool_language": "Python, NextJS, ChatGPT, YoutubeAPI",
       "image": "https://res.cloudinary.com/dnbdcic4r/image/upload/v1784122339/sai.jpg",
       "does_production": "yes",
@@ -104,25 +112,9 @@
       "": ""
     },
     {
-      "date": "2026",
-      "title": "arXiv preprint arXiv:2605.22487 (Under Review)",
-      "description": "Polite on the Surface, Broken in Practice: A Curated Dataset for Fixing Generation and Register Failures in Low-Resource Bangla Text Generation. Authors: MA Shuvo, M Hasan, MT Parvez, AH Noman, MSH Ovi",
-      "type": "paper accepte",
-      "link": "https://arxiv.org/abs/2605.22487",
-      "": ""
-    },
-    {
-      "date": "2026",
-      "title": "arXiv preprint arXiv:2607.17828 (Under Review)",
-      "description": "When a Name Is Not a Name: A Benchmark Dataset and Distilled Reasoning for Culturally Entangled Bangla Homographs in Low-Resource LLMs. Author: MA Shuvo",
-      "type": "paper accepte",
-      "link": "https://arxiv.org/abs/2607.17828",
-      "": ""
-    },
-    {
       "date": "08-04-2025",
       "title": "Paper accepte in 2025 IEEE Region 10 Symposium (TENSYMP)",
-      "description": "ADDomics: Enhancing Multiomics Fusion with Autoencoders and Deep Neural Networks",
+      "description": "ADDomics: Enhancing Multidimics Fusion with Autoencoders and Deep Neural Networks",
       "type": "paper accepte",
       "link": "https://ieeexplore.ieee.org/document/11144973",
       "": ""
@@ -248,6 +240,6 @@
   ],
   "my_update": {
     "document_id": "1Hsw7WNk3jdZkXTUtMMI5l18XJGpiAkfAkh2Sq1RJPzc",
-    "text": ""
+    "text": "### 👋 About Me\nI'm an AI/ML enthusiast currently working on **two research projects**:\n- 🌱 **Crop Disease Detection** — using YOLOv9 for real-time plant disease identification to help farmers act early\n- 🤖 **Retrieval-Augmented Generation (RAG)** — building AI assistants that combine web-scraped/domain data with LLMs (Groq, Llama 3) for accurate, context-aware answers\nRight now I'm actively preparing for an **AI Engineer** role — deepening my skills in machine learning, LLM application development, vector databases, and deploying AI systems end-to-end.\n- 🔭 Currently exploring: computer vision + LLM-powered applications\n- 🌱 Currently learning: production-grade AI engineering practices\n- 💬 Ask me about: YOLO models, RAG pipelines, embeddings, LLM APIs\n- 📫 Reach me: *[your email / LinkedIn link]*"
   }
 }
