@@ -13,7 +13,9 @@ Output:
 """
 
 import gc
+import re
 from pathlib import Path
+from typing import Dict, List, Optional
 
 import chromadb
 import chromadb.utils.embedding_functions as ef
@@ -39,11 +41,30 @@ DEFAULT_TOP_K = 5
 
 MAX_DISTANCE = 1.8
 
+RESEARCH_QUERY_TERMS = (
+    "research",
+    "paper",
+    "papers",
+    "publication",
+    "publications",
+    "published",
+)
+
 
 try:
     torch.set_num_threads(1)
 except Exception:
     pass
+
+
+def is_research_query(query: str) -> bool:
+    """Return whether a query should search publication chunks first."""
+
+    lowered = query.lower()
+    return any(
+        re.search(rf"\b{re.escape(term)}\b", lowered)
+        for term in RESEARCH_QUERY_TERMS
+    )
 
 
 # =============================================================================
@@ -128,16 +149,22 @@ class PortfolioRetriever:
         query_embedding = self.embedding_fn([query])
 
         # ---------------------------------------------------------------------
-        # Stage 1: Search high-priority chunks first (resume & projects)
+        # Stage 1: Search the category that matches the user's intent.
+        # Publication questions must not be restricted to resume/project
+        # chunks, because publication PDFs intentionally have low priority.
         # ---------------------------------------------------------------------
 
         try:
+            preferred_filter = (
+                {"category": "publications"}
+                if is_research_query(query)
+                else {"priority": "high"}
+            )
+
             high_results = self.collection.query(
                 query_embeddings=query_embedding,
                 n_results=top_k,
-                where={
-                    "priority": "high",
-                },
+                where=preferred_filter,
                 include=[
                     "documents",
                     "metadatas",

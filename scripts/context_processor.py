@@ -40,6 +40,7 @@ MAX_GITHUB_CHARS = 1500
 MAX_LEETCODE_CHARS = 1000
 
 MAX_GOOGLE_CHARS = 2500
+MAX_RESEARCH_ITEMS = 12
 
 MAX_TOTAL_CONTEXT_CHARS = 4000
 
@@ -683,6 +684,62 @@ def process_google(
             "\n".join(output),
             MAX_GOOGLE_CHARS,
         )
+
+    # Research questions need the structured publication records first.
+    # Otherwise long project descriptions can consume the entire context
+    # budget before the research_updates section is reached.
+    research_query = any(
+        re.search(rf"\b{re.escape(term)}\b", query.lower())
+        for term in (
+            "research",
+            "paper",
+            "papers",
+            "publication",
+            "publications",
+            "published",
+        )
+    )
+    research_items = data.get("research_updates", [])
+
+    if research_query and isinstance(research_items, list) and research_items:
+        valid_items = [item for item in research_items if isinstance(item, dict)]
+        output.append(f"\nResearch Papers ({len(valid_items)} total):")
+
+        for item in valid_items[:MAX_RESEARCH_ITEMS]:
+            title = clean_text(item.get("title", ""))
+            if not title:
+                continue
+
+            details = []
+            for label, key in (
+                ("Role", "role"),
+                ("Status", "status"),
+                ("Venue", "venue"),
+                ("Domain", "domain"),
+            ):
+                value = clean_text(item.get(key, ""))
+                if value:
+                    details.append(f"{label}: {value}")
+
+            line = f"- {title}"
+            if details:
+                line += f" ({'; '.join(details)})"
+            output.append(line)
+
+            objective = clean_text(item.get("objective", ""))
+            if objective and objective.casefold() != title.casefold():
+                output.append(f"  Focus: {truncate(objective, 220)}")
+
+            link = clean_text(item.get("link", ""))
+            if link and link.lower() != "no links":
+                output.append(f"  Link: {link}")
+
+        if len(valid_items) > MAX_RESEARCH_ITEMS:
+            output.append(
+                f"- Showing {MAX_RESEARCH_ITEMS} of {len(valid_items)} papers."
+            )
+
+        return truncate("\n".join(output), MAX_GOOGLE_CHARS)
 
     # -------------------------------------------------------------------------
     # Featured Projects
