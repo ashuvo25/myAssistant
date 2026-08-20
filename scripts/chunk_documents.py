@@ -14,6 +14,8 @@ from pathlib import Path
 import tiktoken
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
+from resume_grounding import split_resume_sections
+
 
 # =============================================================================
 # PATHS
@@ -157,9 +159,25 @@ def chunk_document(
         if not text:
             continue
 
-        page_chunks = splitter.split_text(
-            text
-        )
+        if category == "resume":
+            sections = split_resume_sections(text)
+            source_segments = [
+                f"{heading}\n{body}"
+                for heading, body in sections.items()
+            ]
+        else:
+            source_segments = [text]
+
+        page_chunks = []
+        for segment in source_segments:
+            segment_heading = segment.splitlines()[0].strip()
+            for split_chunk in splitter.split_text(segment):
+                if category == "resume":
+                    split_chunk = (
+                        f"[Md. Asaduzzaman Shuvo - Resume | {segment_heading}]\n"
+                        f"{split_chunk}"
+                    )
+                page_chunks.append(split_chunk)
 
         for chunk_index, chunk_text in enumerate(
             page_chunks
@@ -171,9 +189,7 @@ def chunk_document(
                 continue
 
             # Prepend clear document context header to prevent LLM confusion
-            if category == "resume" and "Asaduzzaman Shuvo" not in chunk_text[:50]:
-                chunk_text = f"[Md. Asaduzzaman Shuvo - Resume]\n{chunk_text}"
-            elif category == "projects" and "Project Portfolio" not in chunk_text[:50]:
+            if category == "projects" and "Project Portfolio" not in chunk_text[:50]:
                 chunk_text = f"[Project Portfolio]\n{chunk_text}"
 
             chunk_id = (

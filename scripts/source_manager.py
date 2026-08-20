@@ -25,6 +25,7 @@ from typing import Any
 
 from query_router import route_query
 from retriever import PortfolioRetriever
+from resume_grounding import get_authoritative_resume_context
 
 
 # =============================================================================
@@ -871,12 +872,29 @@ class SourceManager:
             "data": [],
         }
 
-        if self.retriever is None:
+        authoritative_text, resume_filename = get_authoritative_resume_context(query)
+        compact_results = []
 
-            result["error"] = (
-                "ChromaDB retriever "
-                "is unavailable."
+        if authoritative_text:
+            compact_results.append(
+                {
+                    "text": truncate(authoritative_text, 2200),
+                    "metadata": {
+                        "document": resume_filename or "resume.pdf",
+                        "page": 1,
+                        "authoritative": True,
+                    },
+                }
             )
+
+        if self.retriever is None:
+            if compact_results:
+                result["data"] = compact_results
+            else:
+                result["error"] = (
+                    "ChromaDB retriever "
+                    "is unavailable."
+                )
 
             return result
 
@@ -886,8 +904,6 @@ class SourceManager:
                 query=query,
                 top_k=MAX_CHROMA_RESULTS,
             )
-
-            compact_results = []
 
             for item in retrieved[
                 :MAX_CHROMA_RESULTS
@@ -910,6 +926,9 @@ class SourceManager:
                 ):
 
                     metadata = {}
+
+                if len(compact_results) >= MAX_CHROMA_RESULTS:
+                    break
 
                 compact_results.append(
                     {

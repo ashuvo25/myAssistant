@@ -334,6 +334,15 @@ def route_query(query: str) -> Dict:
         portfolio_keywords
     )
 
+    explicit_resume_query = contains_any(
+        q,
+        [
+            "resume",
+            "cv",
+            "curriculum vitae",
+        ],
+    )
+
     # =========================================================================
     # COMBINED LIVE SOURCES
     # =========================================================================
@@ -397,6 +406,7 @@ def route_query(query: str) -> Dict:
 
         if (
             contains_any(q, project_research_words)
+            and not explicit_resume_query
             and "google" not in sources
         ):
             sources.append("google")
@@ -421,6 +431,13 @@ def route_query(query: str) -> Dict:
     if shuvo_reference and not sources:
 
         sources.append("chroma")
+
+    # An explicit resume/CV request must be answered from the authoritative
+    # resume source only. Keywords such as awards, projects, or publications
+    # can otherwise activate Google data and push the requested resume section
+    # out of the final context budget.
+    if explicit_resume_query:
+        sources = ["chroma"]
 
     # -------------------------------------------------------------------------
     # DEFAULT

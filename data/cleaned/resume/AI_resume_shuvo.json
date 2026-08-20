@@ -1,0 +1,41 @@
+{
+  "source": "cloudinary",
+  "filename": "AI_resume_shuvo.pdf",
+  "original_file_path": "data\\documents\\resume\\AI_resume_shuvo.pdf",
+  "metadata": {
+    "title": "Resume",
+    "author": "Md. Asaduzzaman Shuvo",
+    "subject": "",
+    "keywords": ""
+  },
+  "analysis": {
+    "original_page_count": 1,
+    "pages_with_text": 1,
+    "total_characters": 4142,
+    "total_words": 550,
+    "average_words_per_page": 550,
+    "heading_count": 10,
+    "possible_headings": [
+      "PROFESSIONAL SUMMARY",
+      "EXPERIENCE",
+      "TECHNICAL SKILLS",
+      "AI/ML",
+      "CV/NLP",
+      "PROJECTS",
+      "PUBLICATIONS",
+      "EDUCATION",
+      "2022 – 2026",
+      "ACHIEVEMENTS"
+    ],
+    "repeated_lines": [],
+    "warnings": []
+  },
+  "pages": [
+    {
+      "page": 1,
+      "text": "Md. Asaduzzaman Shuvo\nAI Engineer · Machine Learning\n+ Dhaka, Bangladesh | # iqbalmdshuvo@gmail.com | +8801580341959 | | Md. Asaduzzaman | | github.com/ashuvo25\n|\n portfolio | | Codeforces | LeetCode | Google Scholar\nPROFESSIONAL SUMMARY\nAI researcher and engineer specializing in LLMs, low-resource NLP, multimodal AI, and computer vision. Author of 2 published\npapers and 3 under review, with hands-on experience in RAG, LLM fine-tuning, vision-language systems, and end-to-end AI\ndevelopment. Skilled in PyTorch, Hugging Face, QLoRA/LoRA, LangChain, YOLO, and FastAPI. Solved 260+ problems across\nLeetCode, Codeforces, and other competitive programming platforms.\nEXPERIENCE\nUndergraduate Researcher\nJan 2023 – June 2026\nUnited International University\n- Built and released 2 Bangla NLP datasets and benchmarked 10+ LLMs using QLoRA and 4-bit quantization.\n- Developed Cultural Chain-of-Thought methods and a YOLO + vision-language framework and published at CVPR Workshop.\nTECHNICAL SKILLS\nAI/ML\nPyTorch, TensorFlow, scikit-learn, Hugging Face\nProgramming Python, C++, Java, JavaScript, SQL, Bash\nLLM/GenAI RAG, LangChain, Transformers, LoRA/QLoRA\nModels\nGPT-4, Claude, Llama 3, BERT, CLIP, ViT\nCV/NLP\nOpenCV, YOLOv8, NLTK, Prompt Engineering\nDatabases\nPostgreSQL, MySQL, MongoDB, Pinecone\nTools\nGit, Linux, Jupyter, Codex, Claude Code, Cursor\nDeployment\nFastAPI, REST APIs, Render, GitHub Pages\nPROJECTS\nVictor Von Doom – RAG Portfolio Assistant\n| Next.js, TypeScript, RAG, GPT-4o-mini, REST API\n[Live]\n| Built and deployed a production RAG assistant that answers source-grounded questions about my research, projects, skills,\neducation, and achievements.\n| Implemented query routing, contextual retrieval, backend health monitoring, retry logic, and robust API error handling.\nNBR VAT Assistant\n| Python, bge-m3, ChromaDB, BM25, Cross-Encoder\n[GitHub]\n| Built a bilingual RAG system using dense and BM25 retrieval, Reciprocal Rank Fusion, and cross-encoder reranking for grounded\nBangladesh VAT-law question answering.\nAGRONEST – AI Agricultural Platform\n| Next.js, FastAPI, YOLO, LLM, PostgreSQL\n[GitHub]\n| Built an AI agricultural platform combining YOLO-based crop disease detection with LLM-powered analysis and actionable\nrecommendations. Integrated real-time weather data to support informed agricultural decision-making.\nUIU Assistant – RAG Chatbot\n| Python, LangChain, Pinecone, Groq\n[GitHub]\n| Developed a web-scraping and RAG pipeline using Pinecone and Groq for grounded university-specific question answering.\nPUBLICATIONS\nWhen a Name Is Not a Name: A Benchmark Dataset and Distilled Reasoning for Culturally Entangled Bangla\nHomographs in Low-Resource LLMs\nBuilt a 1,516-sentence Bangla benchmark dataset HuggingFace and evaluated open-source LLMs with zero/few-shot and Cultural\nChain-of-Thought prompting. Fine-tuned 1–3B models using QLoRA for distilled cultural reasoning · Under Review\nPolite on the Surface, Broken in Practice: A Curated Dataset for Fixing Generation and Register Failures in\nLow-Resource Bangla Text Generation\nDeveloped an instruction-tuning dataset of 4,196 samples to benchmark Bangla LLM generation. Fine-tuned Open-source LLM\nmodels using LoRA and 4-bit NormalFloat quantization.Under Review.\nVisText-Mosquito: A Unified Multimodal Dataset for Visual Detection, and Textual Explanation on Mosquito\nBreeding Sites\nDeveloped a multimodal dataset and framework combining object detection, segmentation, and vision-language models for automated\nmosquito breeding-site analysis.Published\nEDUCATION\nUnited International University (UIU)\nDhaka, Bangladesh\nB.Sc. in Computer Science & Engineering, CGPA: 3.60/4.00\n2022 – 2026\nGovt. K.C. College\nJhenaidah, Bangladesh\nHigher Secondary Certificate (HSC) – Science\nACHIEVEMENTS\nProject Show Awards 1st Runner-Up, DBMS Lab (2024); 2nd Runner-Up, System Analysis & Design Lab (2025); 3rd Runner-Up, Micropro-\ncessor Lab (2025)\nAcademic Reviewer\nCOLM Efficient Reasoning and Context Beyond Window Workshops; EMNLP Grounding Language Models Workshop;\nECCV Computer Vision for Ecology Workshop (2026)\nCertification\nAI Fluency for Students, Anthropic (May 2026)",
+      "characters": 4142,
+      "words": 550
+    }
+  ]
+}
